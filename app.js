@@ -168,6 +168,6 @@ function drawTotalLimestone() {
 // SECTION on page load functions
 update()
 
-setInterval(collectAutoUpgrades, 3000)
+setInterval(collectAutoUpgrades, 2500)
 // !SECTION
 
