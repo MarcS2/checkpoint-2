@@ -1,6 +1,6 @@
 // SECTION global variables
 let concrete = 5000;
-
+let totalLimestone = 0
 let clickUpgrades = [
   {
     name: 'pickaxe',
@@ -38,10 +38,14 @@ function mine() {
     if (clickUpgrade.quantity > 0) {
       const clickCount = clickUpgrade.multiplier * clickUpgrade.quantity
       concrete += clickCount
+      totalLimestone += clickCount
+
     }
   })
+  totalLimestone++
   concrete++
   update()
+  drawTotalLimestone()
 }
 
 
@@ -78,7 +82,9 @@ function collectAutoUpgrades() {
     // @ts-ignore
     if (autoUpgrade.quantity > 0) {
       concrete += autoUpgradeCount
+      totalLimestone += autoUpgradeCount
       update()
+      drawTotalLimestone()
     }
 
   })
@@ -149,6 +155,14 @@ function buyClickUpgrade(upgradeName, buttonName) {
   drawClickUpgrade(`${upgradeName}`)
   clickPoint()
 }
+
+
+function drawTotalLimestone() {
+  const totalLimestoneElem = document.getElementById('totalLimestone')
+  // @ts-ignore
+  totalLimestoneElem.innerText = totalLimestone
+}
+
 // !SECTION
 
 // SECTION on page load functions
