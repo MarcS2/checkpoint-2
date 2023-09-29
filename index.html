@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- mdi -->
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <!-- bs5 -->
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'
+    integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
+  <!-- css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container-fluid">
+    <!-- SECTION resource being mined -->
+    <section class="row imgRow positionRel">
+      <div class="col-12 ">
+        <img onclick="mine()" role="button" class="image-fluid positionAbs"
+          src="https://images.unsplash.com/photo-1620914695139-9507be60a425?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          alt="limestone">
+      </div>
+    </section>
+    <!-- mined resource count -->
+    <section class="row ">
+      <div class="col-2 text-center">
+        <p>+<span id="pointPerClick">1</span><i class="mdi mdi-cursor-default-click-outline"></i></p>
+      </div>
+      <div class="col-8 text-center">
+        <p>Limestone Mined: <span id="concreteMined"></span></p>
+      </div>
+      <div class="col-2 text-center">
+        <p>+<span id="pointPerInterval">0</span><i class="mdi mdi-timer"></i></p>
+      </div>
+    </section>
+    <!-- !SECTION -->
+    <!-- SECTION buttons and stats -->
+    <section class="row">
+      <div class="col-6">
+        <!-- SECTION all upgrade buttons -->
+        <section class="row btnRow">
+          <!-- click upgrades -->
+          <div class="col-6">
+            <div class="my-1">
+
+              <button onclick="buyClickUpgrade('pickaxe', 'pickaxeBtn')" class="btn btn-primary"><span
+                  id="pickaxeBtn">15</span> Limestone</button>
+              <p class="displayInline">⛏️Pickaxe +1</p>
+            </div>
+            <div class="my-1">
+              <button onclick="buyClickUpgrade('small excavator', 'excavatorBtn')" class="btn btn-primary"><span
+                  id="excavatorBtn">55</span> Limestone</button>
+              <p class="displayInline"><i class="mdi mdi-excavator text-danger"></i> Small Excavator +1</p>
+            </div>
+          </div>
+          <!-- automatic upgrades -->
+          <div class="col-6 ">
+            <div class="my-1">
+              <button onclick="buyAutoUpgrade('small drill', 'smlDrillBtn')" class="btn btn-danger"><span
+                  id="smlDrillBtn">450</span> Limestone</button>
+              <p class="displayInline">👷‍♂️Small Drill Operator +1</p>
+            </div>
+            <div class="my-1">
+              <button onclick="buyAutoUpgrade('large drill', 'lrgDrillBtn')" class="btn btn-danger"><span
+                  id="lrgDrillBtn">1200</span> Limestone</button>
+              <p class="displayInline">👷Large Drill Operator +1</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- !SECTION -->
+      <!-- SECTION Stats -->
+      <div class="col-6">
+        <section class="row statRow">
+          <!-- click stats -->
+          <div class="col-6 my-1">
+            <p>Purchased Pickaxe's: <span id="pickaxe">0</span></p>
+            <p>Purchased Small Excavators: <span id="small excavator">0</span></p>
+          </div>
+          <!-- automatic stats -->
+          <div class="col-6 my-1">
+            <p>Hired Small Drill Operators: <span id="small drill">0</span></p>
+            <p>Hired Large Drill Operators: <span id="large drill">0</span></p>
+          </div>
+        </section>
+      </div>
+      <!-- !SECTION -->
+    </section>
+    <!-- !SECTION -->
+  </main>
+  <!-- JS -->
+  <script src="app.js"></script>
+</body>
+
+</html>
