@@ -1,6 +1,6 @@
 // SECTION global variables
 let concrete = 5000;
-let totalLimestone = 0
+let totalLimestone = 0;
 let clickUpgrades = [
   {
     name: 'pickaxe',
@@ -15,6 +15,7 @@ let clickUpgrades = [
     multiplier: 5
   }
 ];
+
 
 let automaticUpgrades = [
   {
@@ -152,7 +153,7 @@ function buyClickUpgrade(upgradeName, buttonName) {
     buttonElem.innerText = foundUpgrade.price
   }
   update()
-  drawClickUpgrade(`${upgradeName}`)
+  drawClickUpgrade(upgradeName)
   clickPoint()
 }
 
